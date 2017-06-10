@@ -1,0 +1,12 @@
+
+1)
+
+base Docker image --> PhP car imae cool à utiliser, bonne organisation de fichiers etc,..
+
+Lire doc sur configuration serveur apache sur le truc ocean et/ou la doc ubuntu
+
+Chopé un template de site sur internet et mis en download du truc (dossier content)
+
+2)
+
+express cool pour envoyer du html et du JSON en memetemps
