@@ -5,38 +5,30 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req,res){
-	res.send(generateStudents());
+	res.send(generateFinnish());
 });
 
 app.listen(3000, function(){
 	console.log("Accept req on port 3000.");
 });
 
-function generateStudents(){
+function generateFinnish(){
 
-	var numberOfStudents = chance.integer({
+	var numberOfSentences = chance.integer({
 		min : 0,
 		max : 10
 	});
-	console.log(numberOfStudents);
-	var students = [];
-	for(var i = 0; i < numberOfStudents; i++){
-		var gender = chance.gender();
-		var birthYear = chance.year({
-			min: 1986,
-			max: 1996
-		});
-		students.push({
-			firstName: chance.first({
-				gender: gender
-			}),
-			lastName: chance.last(),
-			gender: gender,
-			birthday: chance.birthday({
-				year: birthYear
-			})
-		});
-	};
-	console.log(students);
-	return students;
+	console.log(numberOfSentences);
+	var sentences = [];
+	for(var i = 0; i < numberOfSentences; i++){
+		var req = chance.sentence({words : 5}) + "?";
+		var ans = chance.sentence();
+		sentences.push({
+			req,
+			ans
+			});
+		};
+	
+	console.log(sentences);
+	return sentences;
 }
