@@ -12,7 +12,7 @@ $(function() {
                     {
                         message = finnish[0].req;
                     }
-                    $(".about").text(message);
+                    $("#toChange").text(message);
                 });
             };
         loadFinnish();
