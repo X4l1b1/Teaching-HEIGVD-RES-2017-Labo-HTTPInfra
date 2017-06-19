@@ -8,7 +8,7 @@ COPY apache2-foreground /usr/local/bin/
 COPY conf/ /etc/apache2/
 COPY templates/ /var/apache2/templates/
 
-
-RUN a2enmod proxy proxy_http
+RUN mkdir /var/www/load-balancer
+RUN a2enmod proxy proxy_http proxy_balancer lbmethod_byrequest
 RUN a2ensite 000-* 001-*
 RUN service apache2 restart
